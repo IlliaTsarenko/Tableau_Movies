@@ -1,2 +1,2 @@
 # visual
-Tableau and Power BI dachboards
+Tableau and Power BI dashboards
