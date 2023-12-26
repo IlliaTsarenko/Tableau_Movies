@@ -1,33 +1,12 @@
-/* Import statements go at the top */
-@import url('https://example.com/external-styles.css');
-
-/* Reset and default styles */
-body, html {
-    margin: 0;
-    padding: 0;
-}
-
-/* Your custom styles go below */
-#vizContainer {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-}
-
-#vizContainer noscript a img {
-    border: none;
-}
-
-#vizContainer object.tableauViz {
-    display: none;
-}
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Movies production</title>
-    <script src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
     <style>
+        /* Import statements at the top */
+        @import url('https://public.tableau.com/javascripts/api/viz_v1.js');
+
         /* Reset any default styling */
         body, html {
             margin: 0;
