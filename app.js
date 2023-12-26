@@ -1,15 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movies_16890041307980</title>
-</head>
-<body>
-  <h1>Movies_16890041307980</h1>
-  <button id="exportPDF">Generate PDF</button>
-  <button id="exportImage">Generate Image</button>
-  <div id="vizContainer"></div>
-  <script src="./EmbedTableauViz.js"></script>
-</body>
-</html>
+// EmbedTableauViz.js
+
+// This function embeds the Tableau visualization using the provided parameters
+function embedTableauViz() {
+  var divElement = document.getElementById('viz1703600563760');
+  var vizElement = divElement.getElementsByTagName('object')[0];
+
+  if (divElement.offsetWidth > 800) {
+    vizElement.style.width = '1000px';
+    vizElement.style.height = '827px';
+  } else if (divElement.offsetWidth > 500) {
+    vizElement.style.width = '1000px';
+    vizElement.style.height = '827px';
+  } else {
+    vizElement.style.width = '100%';
+    vizElement.style.height = '1427px';
+  }
+
+  var scriptElement = document.createElement('script');
+  scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+}
+
+// Call the function to embed the Tableau visualization when the window loads
+window.onload = function () {
+  embedTableauViz();
+};
