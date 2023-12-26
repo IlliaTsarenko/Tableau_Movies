@@ -1,60 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Movies production</title>
-    <style>
-        /* Import statements at the top */
-        @import url('https://public.tableau.com/javascripts/api/viz_v1.js');
-
-        /* Reset any default styling */
-        body, html {
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Apply styling to the vizContainer */
-        #vizContainer {
-            position: relative;
-            width: 100%;
-            height: 100vh; /* Adjust height as needed */
-        }
-
-        /* Style for the noscript link */
-        #vizContainer noscript a img {
-            border: none;
-        }
-
-        /* Hide the tableauViz object by default */
-        #vizContainer object.tableauViz {
-            display: none;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tableau Dashboard</title>
+    <!-- Include Tableau JavaScript API -->
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
 </head>
 
 <body>
 
-    <div class='tableauPlaceholder' id='vizContainer'>
-        <noscript>
-            <a href='#'>
-                <img alt='Tableau Dashboard' src='https://your_alternative_image_url.png' />
-            </a>
-        </noscript>
-        <object class='tableauViz'>
-            <!-- ... Existing parameters ... -->
-        </object>
-    </div>
+    <h1>My Tableau Dashboard</h1>
 
-    <script type='text/javascript'>
-        var vizContainer = document.getElementById('vizContainer');
-        var vizOptions = {
-            width: '100%',
-            height: '100%', // Adjust height as needed
-            hideTabs: true,
-            hideToolbar: false,
-        };
-        var vizURL = 'https://public.tableau.com/views/Movies_16890041307980/Dashboard1?:embed=yes&:showVizHome=no';
-        var viz = new tableau.Viz(vizContainer, vizURL, vizOptions);
+    <div id="vizContainer" style="width: 100%; height: 100%;"></div>
+
+    <!-- Your Tableau JavaScript code goes here -->
+    <script type="text/javascript">
+        var divElement = document.getElementById('vizContainer');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+
+        if (divElement.offsetWidth > 800) {
+            vizElement.style.width = '100%';
+            vizElement.style.height = '70%'; // You can adjust this percentage
+        } else if (divElement.offsetWidth > 500) {
+            vizElement.style.width = '100%';
+            vizElement.style.height = '70%'; // You can adjust this percentage
+        } else {
+            vizElement.style.width = '100%';
+            vizElement.style.height = '70%'; // You can adjust this percentage
+        }
+
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
     </script>
 
 </body>
