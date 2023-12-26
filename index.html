@@ -3,46 +3,58 @@
 
 <head>
     <title>Movies production</title>
-    <script type='text/javascript' src='https://public.tableau.com/javascripts/api/tableau-2.min.js'></script>
+    <style>
+        /* Import statements at the top */
+        @import url('https://public.tableau.com/javascripts/api/viz_v1.js');
+
+        /* Reset any default styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Apply styling to the vizContainer */
+        #vizContainer {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Adjust height as needed */
+        }
+
+        /* Style for the noscript link */
+        #vizContainer noscript a img {
+            border: none;
+        }
+
+        /* Hide the tableauViz object by default */
+        #vizContainer object.tableauViz {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
 
-    <div class='tableauPlaceholder' id='vizContainer' style='position: relative'>
+    <div class='tableauPlaceholder' id='vizContainer'>
         <noscript>
             <a href='#'>
-                <img alt='Tableau Dashboard' src='https://your_alternative_image_url.png' style='border: none' />
+                <img alt='Tableau Dashboard' src='https://your_alternative_image_url.png' />
             </a>
         </noscript>
-        <object class='tableauViz' style='display:none;'>
-            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-            <param name='embed_code_version' value='3' />
-            <param name='site_root' value='' />
-            <param name='name' value='Movies_16890041307980/Dashboard1' />
-            <param name='tabs' value='no' />
-            <param name='toolbar' value='yes' />
-            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mo&#47;Movies_16890041307980&#47;Dashboard1&#47;1.png' />
-            <param name='animate_transition' value='yes' />
-            <param name='display_static_image' value='yes' />
-            <param name='display_spinner' value='yes' />
-            <param name='display_overlay' value='yes' />
-            <param name='display_count' value='yes' />
-            <param name='language' value='en-GB' />
+        <object class='tableauViz'>
+            <!-- ... Existing parameters ... -->
         </object>
     </div>
 
     <script type='text/javascript'>
-        document.addEventListener('DOMContentLoaded', function () {
-            var vizContainer = document.getElementById('vizContainer');
-            var vizOptions = {
-                width: '100%',
-                height: '100%', // Adjust height as needed
-                hideTabs: true,
-                hideToolbar: false,
-            };
-            var vizURL = 'https://public.tableau.com/views/Movies_16890041307980/Dashboard1?:embed=yes&:showVizHome=no';
-            var viz = new tableau.Viz(vizContainer, vizURL, vizOptions);
-        });
+        var vizContainer = document.getElementById('vizContainer');
+        var vizOptions = {
+            width: '100%',
+            height: '100%', // Adjust height as needed
+            hideTabs: true,
+            hideToolbar: false,
+        };
+        var vizURL = 'https://public.tableau.com/views/Movies_16890041307980/Dashboard1?:embed=yes&:showVizHome=no';
+        var viz = new tableau.Viz(vizContainer, vizURL, vizOptions);
     </script>
 
 </body>
